@@ -33,10 +33,6 @@ class MateriController extends Controller
             $file = $request->file('lampiran');
             $filenameLampiran = sha1($request->nama . Carbon::now() . mt_rand()). '.'.$file->getClientOriginalExtension();
             $file->storeAs('lampiran', $filenameLampiran);
-        } elseif ($materi->lampiran) {
-            $lampiran = $materi->lampiran;
-        } else {
-            $lampiran = null;
         }
         
         // profile

@@ -138,7 +138,7 @@
         </div>
     </li>
 
-    <li class="nav-item active">
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabMateri"
             aria-expanded="true" aria-controls="tabMateri">
             <i class="fas fa-book"></i>
@@ -153,7 +153,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRpp"
             aria-expanded="true" aria-controls="tabRpp">
             <i class="fas fa-book"></i>
@@ -177,7 +177,8 @@
         <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Rapot</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -191,7 +192,8 @@
         <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
-                
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -240,7 +242,7 @@
 	<div class="card-header">
         <div class="row">
             <div class="col-md-10">
-                <h3 class="panel-title"><i class="fas fa-user-plus"></i> Tambah Materi</h3>
+                <h3 class="panel-title"><i class="fas fa-user-plus"></i> Tambah RPP</h3>
             </div>
         </div>
 	</div>
@@ -265,23 +267,18 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="nik">NIK <span class="text-danger">*</span></label>
-                                <input name="nik" id="nik" type="text" class="form-control"  required>
-                                @error('nik')
+                                    <select name="nik" id="nik" class="form-control" required>
+                                        <option value="">Pilih NIK</option>   
+                                        @foreach ($guru as $gu)
+                                            <option value="{{ $gu->nik }}">{{ $gu->nik }}</option>   
+                                        @endforeach
+                                    </select>
+                                    @error('nik')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('nik') }}</strong>
                                     </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="nama">Nama Guru <span class="text-danger">*</span></label>
-                                <input name="nama" id="nama" type="text" class="form-control"  required>
-                                @error('guru')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('guru') }}</strong>
-                                    </span>
-                                @enderror
+                                    @enderror
+                                </label>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -320,29 +317,16 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="judul">Judul <span class="text-danger">*</span></label>
-                                    <input type="text" name="judul" id="judul" class="form-control" required>
-                                    @error('judul')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('judul') }}</strong>
-                                    </span>
-                                    @enderror
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="mapel">Mata Pelajaran <span class="text-danger">*</span></label>
-                                    <select name="mapel" id="mapel" class="form-control" required>
-                                        <option value="">Pilih Mata Pelajaran</option>   
-                                        @foreach ($mapel as $map)
-                                            <option value="{{ $map->mata_pelajaran }}">{{ $map->mata_pelajaran }}</option>   
-                                        @endforeach
+                                <label for="ki">KI <span class="text-danger">*</span></label>
+                                    <select name="ki" id="ki" class="form-control" required>
+                                        <option value="">Pilih KI</option>   
+                                            <option value="3.1">3.1</option>   
+                                            <option value="3.2">3.2</option>   
+                                            <option value="3.20">3.20</option>   
                                     </select>
-                                    @error('mapel')
+                                    @error('ki')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('mapel') }}</strong>
+                                        <strong>{{ $errors->first('ki') }}</strong>
                                     </span>
                                     @enderror
                                 </label>
@@ -350,8 +334,25 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="lampiran">lampiran <span class="text-danger">*</span></label>
-                                <input name="lampiran" type="file" class="form-control @error('lampiran') is-invalid @enderror" value="{{ old('lampiran') }}" id="lampiran">
+                                <label for="kd">KD <span class="text-danger">*</span></label>
+                                    <select name="kd" id="kd" class="form-control" required>
+                                        <option value="">Pilih KD</option>   
+                                            <option value="4.1">4.1</option>   
+                                            <option value="4.2">4.2</option>   
+                                            <option value="4.20">4.20</option>   
+                                    </select>
+                                    @error('kd')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('kd') }}</strong>
+                                    </span>
+                                    @enderror
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="lampiran">Dokumen RPP <span class="text-danger">*</span></label>
+                                <input name="lampiran" type="file" class="form-control id="lampiran">
                                 @error('lampiran')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('lampiran') }}</strong>
@@ -359,18 +360,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="jam">Link YouTube</label>
-                                    <input name="link" type="text" id="link" class="form-control">
-                                @error('link')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('link') }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
                     </div>
                     <button type="submit" class="btn btn-success"><i class="fas fa-pen-square"></i> Submit</button>
                 </form>

@@ -131,6 +131,51 @@
         </div>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRpp"
+            aria-expanded="true" aria-controls="tabRpp">
+            <i class="fas fa-book"></i>
+            <span>Halaman RPP</span>
+        </a>
+        <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola RPP</h6>
+                <a class="collapse-item" href="{{ route('add.rpp') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rpp.list') }}">Table</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRapot"
+            aria-expanded="true" aria-controls="tabRapot">
+            <i class="fas fa-book"></i>
+            <span>Halaman Rapot</span>
+        </a>
+        <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola Rapot</h6>
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabEskul"
+            aria-expanded="true" aria-controls="tabEskul">
+            <i class="fas fa-book"></i>
+            <span>Halaman Ekstrakulikuler</span>
+        </a>
+        <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
+            </div>
+        </div>
+    </li>
+
     <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabInfo"
             aria-expanded="true" aria-controls="tabInfo">

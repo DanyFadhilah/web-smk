@@ -158,7 +158,8 @@
         <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola RPP</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rpp') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rpp.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -172,7 +173,8 @@
         <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Rapot</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -186,7 +188,8 @@
         <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
-                
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -283,9 +286,12 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="kelas">Kelas <span class="text-danger">*</span></label>
-                                    @foreach ($kelas as $item)
-                                        <input name="kelas" type="checkbox" id="kelas" value="{{$item->kelas}}">{{$item->kelas}}
-                                    @endforeach
+                                    <select name="kelas" id="kelas" class="form-control" required>
+                                        <option value="">Pilih Kelas</option>   
+                                        @foreach ($kelas as $item)
+                                            <option value="{{ $item->kelas }}">{{ $item->kelas }}</option>   
+                                        @endforeach
+                                    </select>
                                 </select>
                                 @error('kelas')
                                     <span class="invalid-feedback" role="alert">

@@ -121,47 +121,20 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRpp"
-            aria-expanded="true" aria-controls="tabRpp">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabJadwal"
+            aria-expanded="true" aria-controls="tabJadwal">
             <i class="fas fa-book"></i>
-            <span>Halaman RPP</span>
+            <span>Hal Jadwal Pelajaran</span>
         </a>
-        <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+        <div id="tabJadwal" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kelola RPP</h6>
-                
+                <h6 class="collapse-header">Kelola Jadwal Pelajaran</h6>
+                <a class="collapse-item" href="{{ route('add.jadwal') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.jadwal.list') }}">Table</a>
             </div>
         </div>
     </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRapot"
-            aria-expanded="true" aria-controls="tabRapot">
-            <i class="fas fa-book"></i>
-            <span>Halaman Rapot</span>
-        </a>
-        <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kelola Rapot</h6>
-                
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabEskul"
-            aria-expanded="true" aria-controls="tabEskul">
-            <i class="fas fa-book"></i>
-            <span>Halaman Ekstrakulikuler</span>
-        </a>
-        <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
-                
-            </div>
-        </div>
-    </li>
-
+    
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabMateri"
             aria-expanded="true" aria-controls="tabMateri">
@@ -177,17 +150,48 @@
         </div>
     </li>
 
+
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabJadwal"
-            aria-expanded="true" aria-controls="tabJadwal">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRpp"
+            aria-expanded="true" aria-controls="tabRpp">
             <i class="fas fa-book"></i>
-            <span>Hal Jadwal Pelajaran</span>
+            <span>Halaman RPP</span>
         </a>
-        <div id="tabJadwal" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+        <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kelola Jadwal Pelajaran</h6>
-                <a class="collapse-item" href="{{ route('add.jadwal') }}">Create</a>
-                <a class="collapse-item" href="{{ route('table.jadwal.list') }}">Table</a>
+                <h6 class="collapse-header">Kelola RPP</h6>
+                <a class="collapse-item" href="{{ route('add.rpp') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rpp.list') }}">Table</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabRapot"
+            aria-expanded="true" aria-controls="tabRapot">
+            <i class="fas fa-book"></i>
+            <span>Halaman Rapot</span>
+        </a>
+        <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola Rapot</h6>
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#tabEskul"
+            aria-expanded="true" aria-controls="tabEskul">
+            <i class="fas fa-book"></i>
+            <span>Halaman Ekstrakulikuler</span>
+        </a>
+        <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
             </div>
         </div>
     </li>

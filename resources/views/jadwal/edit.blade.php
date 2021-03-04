@@ -158,7 +158,8 @@
         <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola RPP</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rpp') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rpp.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -172,7 +173,8 @@
         <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Rapot</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -186,7 +188,8 @@
         <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
-                
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -250,7 +253,7 @@
                             <div class="form-group">
                                 <label for="semester">Semester Ke <span class="text-danger">*</span></label>
                                     <select name="semester" id="semester" class="form-control" required>
-                                        <option value="">Pilih Semester</option>   
+                                        <option value="{{ old('semester') ?? $jadwal->semester }}">{{ old('semester') ?? $jadwal->semester }}</option>   
                                         <option value="Genap">Genap</option>   
                                         <option value="Ganjil">Ganjil</option>
                                     </select>
@@ -266,7 +269,7 @@
                             <div class="form-group">
                                 <label for="tahun">Tahun Pelajaran <span class="text-danger">*</span></label>
                                     <select name="tahun" id="tahun" class="form-control" required>
-                                        <option value="">Pilih Tahun Pelajaran</option>
+                                        <option value="{{ old('tahun') ?? $jadwal->tahun }}">{{ old('tahun') ?? $jadwal->tahun }}</option>
                                         <option value="2020/2021">2020/2021</option>   
                                         <option value="2021/2022">2021/2022</option>
                                         <option value="2023/2024">2023/2024</option>
@@ -283,9 +286,12 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="kelas">Kelas <span class="text-danger">*</span></label>
-                                    @foreach ($kelas as $item)
-                                        <input name="kelas" type="checkbox" id="kelas" value="{{$item->kelas}}">{{$item->kelas}}
-                                    @endforeach
+                                    <select name="kelas" id="kelas" class="form-control" required>
+                                        <option value="{{ old('kelas') ?? $jadwal->kelas }}">{{ old('kelas') ?? $jadwal->kelas }}</option>   
+                                        @foreach ($kelas as $item)
+                                            <option value="{{ $item->kelas }}">{{ $item->kelas }}</option>   
+                                        @endforeach
+                                    </select>
                                 </select>
                                 @error('kelas')
                                     <span class="invalid-feedback" role="alert">
@@ -298,7 +304,7 @@
                             <div class="form-group">
                                 <label for="mapel">Mata Pelajaran <span class="text-danger">*</span></label>
                                     <select name="mapel" id="mapel" class="form-control" required>
-                                        <option value="">Pilih Mata Pelajaran</option>   
+                                        <option value="{{ old('mapel') ?? $jadwal->mapel }}">{{ old('mapel') ?? $jadwal->mapel }}</option>   
                                         @foreach ($mapel as $map)
                                             <option value="{{ $map->mata_pelajaran }}">{{ $map->mata_pelajaran }}</option>   
                                         @endforeach
@@ -326,7 +332,7 @@
                             <div class="form-group">
                                 <label for="nama_guru">Nama Guru <span class="text-danger">*</span></label>
                                     <select name="nama_guru" id="nama_guru" class="form-control" required>
-                                        <option value="">Pilih Nama Guru</option>   
+                                        <option value="{{ old('nama_guru') ?? $jadwal->nama_guru }}">{{ old('nama_guru') ?? $jadwal->nama_guru }}</option>   
                                         @foreach ($guru as $gu)
                                             <option value="{{ $gu->nama }}">{{ $gu->nama }}</option>   
                                         @endforeach

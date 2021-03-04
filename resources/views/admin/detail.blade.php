@@ -1,7 +1,14 @@
 @extends('layouts.master')
 
 @section('title')
-    Dashboard | Deatil Data Admin
+    Dashboard | TDetail Admin
+@endsection
+
+@section('css')
+    <style>
+        .progress { position:relative; width:100%; }
+        .percent { position:absolute; display:inline-block; left:50%; margin-top: 8px; color: #FFFFFF;}
+   </style>
 @endsection
 
 @section('sidebar')
@@ -35,8 +42,8 @@
         <div id="tabAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Admin</h6>
-                <a class="collapse-item" href="{{ route('add.admin') }}">Create</a>
-                <a class="collapse-item active" href="{{ route('table.admin.list') }}">Table</a>
+                <a class="collapse-item active" href="{{ route('add.admin') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.admin.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -94,7 +101,7 @@
         </a>
         <div id="tabClass" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Kelola Jurusan</h6>
+                <h6 class="collapse-header">Kelola Kelas</h6>
                 <a class="collapse-item active" href="{{ route('add.class') }}">Create</a>
                 <a class="collapse-item" href="{{ route('table.class.list') }}">Table</a>
             </div>
@@ -155,7 +162,8 @@
         <div id="tabRpp" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola RPP</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rpp') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rpp.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -169,7 +177,8 @@
         <div id="tabRapot" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Rapot</h6>
-                
+                <a class="collapse-item" href="{{ route('add.rapot') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.rapot.list') }}">Table</a>
             </div>
         </div>
     </li>
@@ -183,7 +192,8 @@
         <div id="tabEskul" class="collapse" aria-labelledby="headingClass" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Kelola Ekstrakulikuler</h6>
-                
+                <a class="collapse-item" href="{{ route('add.ekskul') }}">Create</a>
+                <a class="collapse-item" href="{{ route('table.ekskul.list') }}">Table</a>
             </div>
         </div>
     </li>

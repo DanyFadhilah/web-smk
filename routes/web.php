@@ -181,7 +181,7 @@ Route::group(['middleware' => ['auth', 'cek.role:ADMIN']], function() {
     // Hapus Jadwal
     Route::delete('/admin/dashboard/table/list/materi/{id}/destroy', 'MateriController@destroyMateri')->name('destroy.materi');
 
-    // Materi
+    // rpp
     Route::get('/admin/dashboard/add/rpp', 'RppController@addRpp')->name('add.rpp');
     Route::post('/admin/dashboard/add/rpp/store', 'RppController@postAddRpp');
     // Table
@@ -194,6 +194,32 @@ Route::group(['middleware' => ['auth', 'cek.role:ADMIN']], function() {
     // Hapus Jadwal
     Route::delete('/admin/dashboard/table/list/rpp/{id}/destroy', 'RppController@destroyRpp')->name('destroy.rpp');
     Route::get('/guru/getGuru/', 'RppController@getGuru')->name('rpp.getGuru');
+
+    // rapot
+    Route::get('/admin/dashboard/add/rapot', 'RapotController@addRapot')->name('add.rapot');
+    Route::post('/admin/dashboard/add/rapot/store', 'RapotController@postAddRapot');
+    // Table
+    Route::get('/admin/dashboard/table/list/rapot', 'RapotController@tableRapot')->name('table.rapot.list');
+    // Edit Jadwal
+    Route::get('/admin/dashboard/table/list/rapot/{id}/edit', 'RapotController@editRapot')->name('edit.rapot');
+    Route::put('/admin/dashboard/table/list/rapot/{id}/update', 'RapotController@updateRapot')->name('update.rapot');
+     // View Detail
+    Route::get('/admin/dashboard/table/list/rapot/{id}/detail', 'RapotController@detailRapot')->name('view.detail.rapot');
+    // Hapus Jadwal
+    Route::delete('/admin/dashboard/table/list/rapot/{id}/destroy', 'RapotController@destroyRapot')->name('destroy.rapot');
+
+    // ekskul
+    Route::get('/admin/dashboard/add/ekskul', 'EkskulController@addEkskul')->name('add.ekskul');
+    Route::post('/admin/dashboard/add/ekskul/store', 'EkskulController@postAddEkskul');
+    // Table
+    Route::get('/admin/dashboard/table/list/ekskul', 'EkskulController@tableEkskul')->name('table.ekskul.list');
+    // Edit Jadwal
+    Route::get('/admin/dashboard/table/list/ekskul/{id}/edit', 'EkskulController@editEkskul')->name('edit.ekskul');
+    Route::put('/admin/dashboard/table/list/ekskul/{id}/update', 'EkskulController@updateEkskul')->name('update.ekskul');
+     // View Detail
+    Route::get('/admin/dashboard/table/list/ekskul/{id}/detail', 'EkskulController@detailEkskul')->name('view.detail.ekskul');
+    // Hapus Jadwal
+    Route::delete('/admin/dashboard/table/list/ekskul/{id}/destroy', 'EkskulController@destroyEkskul')->name('destroy.ekskul');
 
     // logout Admin
     Route::get('/admin/dashboard/logout', 'AdminController@logoutAdmin');
